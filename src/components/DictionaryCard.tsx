@@ -5,16 +5,22 @@ import { fetchDefinition } from "@/lib/fetchDefinition";
 import { SearchBar } from "@/components/SearchBar";
 import { DefinitionBlock } from "@/components/DefinitionBlock";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useEffect } from "react";
 
 export const DictionaryCard = () => {
   const { word, addToHistory, history } = useWordStore();
 
-  const { data, isLoading, isError, refetch } = useQuery<any>({
+  const { data, isLoading, isError, refetch, isSuccess } = useQuery<any>({
     queryKey: ["definition", word],
     queryFn: () => fetchDefinition(word),
-    enabled: false,
-    onSuccess: () => addToHistory(word),
+    enabled: false
   });
+
+useEffect(() => {
+    if (isSuccess && word) {
+        addToHistory(word);
+    }
+}, [isSuccess, word, addToHistory]);
 
   return (
     <Card className="w-full max-w-lg shadow-xl border rounded-2xl bg-white dark:bg-neutral-900">

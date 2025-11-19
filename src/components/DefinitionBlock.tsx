@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+
 export const DefinitionBlock = ({ data }: { data: any }) => {
   if (!data) return null;
 
