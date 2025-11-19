@@ -1,73 +1,144 @@
-# React + TypeScript + Vite
+# 📘 **React Dictionary App**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, fast, modern dictionary powered by **Axios**, **React Query**, **Zustand (persist)**, **shadcn/ui**, and **React Router**.
 
-Currently, two official plugins are available:
+This project is crafted with a smooth developer experience in mind — modular components, elegant routing, theme support, and delightful UI micro-interactions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 **Features**
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### 🔍 **Search Definitions Instantly**
 
-## Expanding the ESLint configuration
+* Uses the free **dictionaryapi.dev** API
+* Debounced search + error states
+* Clean UI with `shadcn/ui`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🎧 **Pronunciation Audio Player**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Smooth play/pause button
+* Handles edge cases (missing audio, blocking browsers)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 💀 **Skeleton Loaders (shadcn style)**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* Animated loading placeholders using Tailwind
+* Helps maintain visual flow while fetching
+
+### 🕒 **Recent Search History (Persisted)**
+
+* Powered by **Zustand + zustand/middleware persist**
+* Saved across page reloads
+* Nicely styled history chips
+* Click to auto-load a previous search
+
+### 🌓 **Theme Toggle (Dark/Light Mode)**
+
+* Full app theme system
+* Uses the shadcn/ui theme architecture
+
+### 🧭 **Routing & Layout System**
+
+* `/` → dictionary search page
+* `/about` → about/project info
+* Layout with header, footer, nav, and theme toggle
+
+---
+
+## 📦 **Tech Stack**
+
+| Layer            | Technology          |
+| ---------------- | ------------------- |
+| UI Components    | shadcn/ui           |
+| State Management | Zustand (persist)   |
+| Data Fetching    | React Query + Axios |
+| Routing          | React Router DOM    |
+| Styling          | Tailwind CSS        |
+| Build Tool       | Vite                |
+
+---
+
+## 📥 **Installation**
+
+```bash
+npm install
+npm install @tanstack/react-query axios zustand zustand/middleware
+npm install react-router-dom
+npm install clsx tailwind-merge
+npm install shadcn-ui --save-dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Run the dev server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+---
+
+## 📁 **Project Structure**
+
+```
+src/
+ ├─ components/
+ │   ├─ SearchBar.tsx
+ │   ├─ DictionaryCard.tsx
+ │   ├─ DefinitionBlock.tsx
+ │   ├─ AudioPlayer.tsx
+ │   ├─ SkeletonDef.tsx
+ │   └─ HistoryList.tsx
+ │
+ ├─ store/
+ │   └─ useWordStore.ts
+ │
+ ├─ lib/
+ │   └─ fetchDefinition.ts
+ │
+ ├─ pages/
+ │   ├─ Home.tsx
+ │   └─ About.tsx
+ │
+ ├─ layout/
+ │   └─ Layout.tsx
+ │
+ └─ main.tsx
+```
+
+---
+
+## 🔗 **API Used**
+
+> **Dictionary API** — Free, no-auth, open source.
+
+Base URL:
+
+```
+https://api.dictionaryapi.dev/api/v2/entries/en/<word>
+```
+
+---
+
+## 🎨 **Design Philosophy**
+
+* Minimalist yet expressive
+* Smooth interactions, no noise
+* Thoughtful spacing & typography
+* Dark/light harmony
+* A UX meant to *breathe*
+
+---
+
+## 🤝 **Contributions**
+
+Pull requests are welcome. For major changes, please open an issue first to discuss.
+
+---
+
+## 📜 **License**
+
+MIT License — open for learning, tweaking, and building.
+
+---
+
+## ✨ **Author**
+
+Built with curiosity, discipline, and imagination — weaving tech and poetry into one crea
