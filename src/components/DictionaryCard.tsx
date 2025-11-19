@@ -9,7 +9,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 export const DictionaryCard = () => {
   const { word, addToHistory, history } = useWordStore();
 
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data, isLoading, isError, refetch } = useQuery<any>({
     queryKey: ["definition", word],
     queryFn: () => fetchDefinition(word),
     enabled: false,
