@@ -13,14 +13,14 @@ export const DictionaryCard = () => {
   const { data, isLoading, isError, refetch, isSuccess } = useQuery<any>({
     queryKey: ["definition", word],
     queryFn: () => fetchDefinition(word),
-    enabled: false
+    enabled: false,
   });
 
-useEffect(() => {
+  useEffect(() => {
     if (isSuccess && word) {
-        addToHistory(word);
+      addToHistory(word);
     }
-}, [isSuccess, word, addToHistory]);
+  }, [isSuccess, word, addToHistory]);
 
   return (
     <Card className="w-full max-w-lg shadow-xl border rounded-2xl bg-white dark:bg-neutral-900">

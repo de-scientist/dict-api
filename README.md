@@ -10,37 +10,37 @@ This project is crafted with a smooth developer experience in mind — modular c
 
 ### 🔍 **Search Definitions Instantly**
 
-* Uses the free **dictionaryapi.dev** API
-* Debounced search + error states
-* Clean UI with `shadcn/ui`
+- Uses the free **dictionaryapi.dev** API
+- Debounced search + error states
+- Clean UI with `shadcn/ui`
 
 ### 🎧 **Pronunciation Audio Player**
 
-* Smooth play/pause button
-* Handles edge cases (missing audio, blocking browsers)
+- Smooth play/pause button
+- Handles edge cases (missing audio, blocking browsers)
 
 ### 💀 **Skeleton Loaders (shadcn style)**
 
-* Animated loading placeholders using Tailwind
-* Helps maintain visual flow while fetching
+- Animated loading placeholders using Tailwind
+- Helps maintain visual flow while fetching
 
 ### 🕒 **Recent Search History (Persisted)**
 
-* Powered by **Zustand + zustand/middleware persist**
-* Saved across page reloads
-* Nicely styled history chips
-* Click to auto-load a previous search
+- Powered by **Zustand + zustand/middleware persist**
+- Saved across page reloads
+- Nicely styled history chips
+- Click to auto-load a previous search
 
 ### 🌓 **Theme Toggle (Dark/Light Mode)**
 
-* Full app theme system
-* Uses the shadcn/ui theme architecture
+- Full app theme system
+- Uses the shadcn/ui theme architecture
 
 ### 🧭 **Routing & Layout System**
 
-* `/` → dictionary search page
-* `/about` → about/project info
-* Layout with header, footer, nav, and theme toggle
+- `/` → dictionary search page
+- `/about` → about/project info
+- Layout with header, footer, nav, and theme toggle
 
 ---
 
@@ -119,11 +119,11 @@ https://api.dictionaryapi.dev/api/v2/entries/en/<word>
 
 ## 🎨 **Design Philosophy**
 
-* Minimalist yet expressive
-* Smooth interactions, no noise
-* Thoughtful spacing & typography
-* Dark/light harmony
-* A UX meant to *breathe*
+- Minimalist yet expressive
+- Smooth interactions, no noise
+- Thoughtful spacing & typography
+- Dark/light harmony
+- A UX meant to _breathe_
 
 ---
 

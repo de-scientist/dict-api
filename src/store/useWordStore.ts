@@ -9,11 +9,14 @@ interface WordStore {
 }
 
 export const useWordStore = create(
-  persist<WordStore>((set) => ({
-    word: "",
-    setWord: (value) => set({ word: value }),
-    history: [],
-    addToHistory: (value) => set((state) => ({ history: [value, ...state.history] })),
-  }),
-  { name: "word-storage" })
+  persist<WordStore>(
+    (set) => ({
+      word: "",
+      setWord: (value) => set({ word: value }),
+      history: [],
+      addToHistory: (value) =>
+        set((state) => ({ history: [value, ...state.history] })),
+    }),
+    { name: "word-storage" },
+  ),
 );
