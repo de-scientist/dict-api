@@ -25,7 +25,7 @@ useEffect(() => {
   return (
     <Card className="w-full max-w-lg shadow-xl border rounded-2xl bg-white dark:bg-neutral-900">
       <CardHeader className="flex justify-between items-center">
-        <CardTitle className="text-lg font-bold">Dictionary Lookup</CardTitle>
+        <CardTitle className="text-lg font-bold">My Dictionary </CardTitle>
         <ThemeToggle />
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
